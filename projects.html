@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - CODE 4 IMPACT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Base Styles */
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f4f7fa;
+      color: #333;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 100px 20px 60px;
+      background: linear-gradient(to right, #0077ff, #00d4ff);
+      color: #fff;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .hero button {
+      padding: 14px 30px;
+      border: none;
+      border-radius: 30px;
+      background: #ff5722;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .hero button:hover {
+      transform: scale(1.05);
+    }
+
+    /* Featured Project */
+    .featured-project {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      max-width: 1200px;
+      margin: 80px auto;
+      gap: 40px;
+      padding: 0 20px;
+    }
+
+    .featured-project img {
+      width: 100%;
+      max-width: 550px;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    .featured-content {
+      flex: 1;
+    }
+
+    .featured-content h2 {
+      font-size: 2rem;
+      color: #0077ff;
+      margin-bottom: 20px;
+    }
+
+    .featured-content p {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .featured-content a {
+      padding: 10px 20px;
+      background: #ff5722;
+      color: #fff;
+      border-radius: 30px;
+      font-weight: 600;
+      display: inline-block;
+      transition: transform 0.3s;
+    }
+
+    .featured-content a:hover {
+      transform: scale(1.05);
+    }
+
+    /* Projects Grid */
+    .projects {
+      max-width: 1200px;
+      margin: 60px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 0 20px;
+    }
+
+    .project-card {
+      background-color: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .project-card .content {
+      padding: 20px;
+    }
+
+    .project-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.3rem;
+      color: #0077ff;
+    }
+
+    .project-card p {
+      margin: 0 0 15px;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .project-card a {
+      font-weight: 600;
+      color: #ff5722;
+      transition: color 0.3s;
+    }
+
+    .project-card a:hover {
+      color: #0077ff;
+    }
+
+    /* Achievements Section */
+    .achievements {
+      max-width: 1000px;
+      margin: 80px auto;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .achievements h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #0077ff;
+    }
+
+    .achievement-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .achievement-item {
+      background-color: #fff;
+      border-radius: 15px;
+      padding: 30px 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      min-width: 200px;
+      flex: 1 1 200px;
+      transition: transform 0.3s;
+    }
+
+    .achievement-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .achievement-item h3 {
+      margin: 0 0 10px;
+      font-size: 1.5rem;
+      color: #ff5722;
+    }
+
+    .achievement-item p {
+      margin: 0;
+      font-size: 1rem;
+      color: #555;
+    }
+
+  
+    /* Responsive */
+    @media(max-width:1024px){
+      .featured-project {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .featured-content {
+        text-align: center;
+      }
+    }
+
+    @media(max-width:768px){
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .hero button {
+        font-size: 1rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
+  </script>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Our Projects & Achievements</h1>
+    <p>Discover the innovations and impact created by CODE 4 IMPACT members.</p>
+    <button>See Latest Project →</button>
+  </section>
+
+  <!-- Featured Project -->
+  <section class="featured-project">
+    <img src="featured-project.jpg" alt="Featured Project">
+    <div class="featured-content">
+      <h2>Featured Project: Smart Community App</h2>
+      <p>This project connects local communities through an interactive app that helps manage events, workshops, and resources efficiently. The app was developed using React Native and Firebase to ensure scalability and reliability.</p>
+      <a href="#">Explore Project →</a>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="projects">
+    <div class="project-card">
+      <img src="project1.jpg" alt="Project 1">
+      <div class="content">
+        <h3>Project Title 1</h3>
+        <p>Short description about the project goes here.</p>
+        <a href="#">Read More →</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <img src="project2.jpg" alt="Project 2">
+      <div class="content">
+        <h3>Project Title 2</h3>
+        <p>Short description about the project goes here.</p>
+        <a href="#">Read More →</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <img src="project3.jpg" alt="Project 3">
+      <div class="content">
+        <h3>Project Title 3</h3>
+        <p>Short description about the project goes here.</p>
+        <a href="#">Read More →</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <img src="project4.jpg" alt="Project 4">
+      <div class="content">
+        <h3>Project Title 4</h3>
+        <p>Short description about the project goes here.</p>
+        <a href="#">Read More →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section class="achievements">
+    <h2>Achievements</h2>
+    <div class="achievement-items">
+      <div class="achievement-item">
+        <h3>10+</h3>
+        <p>Projects Completed</p>
+      </div>
+      <div class="achievement-item">
+        <h3>50+</h3>
+        <p>Participants Involved</p>
+      </div>
+      <div class="achievement-item">
+        <h3>3</h3>
+        <p>Awards Won</p>
+      </div>
+    </div>
+  </section>
+
+
+<!--footer  -->
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+</body>
+</html>
