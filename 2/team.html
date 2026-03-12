@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meet the team and committee members of CODE 4 IMPACT">
+  <title>Our Team | CODE 4 IMPACT</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/team.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader" style="
+    position:fixed;
+    top:0; left:0; right:0; bottom:0;
+    background:#111;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    opacity:1;
+    transition:opacity 0.3s ease;
+  ">
+    <div style="
+      width:50px;
+      height:50px;
+      border:5px solid #4fa1f5;
+      border-top:5px solid transparent;
+      border-radius:50%;
+      animation:spin 1s linear infinite;
+    "></div>
+  </div>
+
+  <!-- Header Section -->
+  <div id="header-placeholder"></div>
+
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
+
+    window.addEventListener('load', function() {
+      const preloader = document.getElementById('preloader');
+      if (preloader) {
+        preloader.style.opacity = '0';
+        setTimeout(() => preloader.style.display = 'none', 300);
+      }
+    });
+  </script>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-overlay">
+      <h1>Meet Our Committee</h1>
+      <p>Meet the talented team behind CODE 4 IMPACT</p>
+      <button id="revealTeamBtn"><i class="fas fa-arrow-down"></i> Reveal Team</button>
+    </div>
+    <img src="images/group-photo.jpg" alt="Committee Group Photo" class="hero-image">
+  </section>
+
+  <!-- PRESIDENT SECTION -->
+  <section class="president section-hidden">
+    <div class="president-container">
+      <div class="president-image">
+        <img src="images/president.jpg" alt="President">
+      </div>
+      <div class="president-info">
+        <h2>John Doe</h2>
+        <h3>President & Web Creator</h3>
+        <p class="quote">"Creativity is intelligence having fun. I believe in leveraging technology to create meaningful impact and inspire the next generation of innovators."</p>
+        <div class="social-links">
+          <a href="https://twitter.com" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://linkedin.com" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://instagram.com" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE COMMITTEE SECTION -->
+  <section class="core-committee section-hidden">
+    <div class="container">
+      <h2>Core Committee</h2>
+      <div class="committee-grid">
+        <!-- Member 1 -->
+        <div class="member-card">
+          <div class="member-image-wrapper">
+            <img src="images/member1.jpg" alt="Jane Smith">
+          </div>
+          <h4>Jane Smith</h4>
+          <span class="member-role">Vice President</span>
+          <p>Strategic Leadership</p>
+          <div class="social-links">
+            <a href="https://twitter.com" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://instagram.com" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        
+        <!-- Member 2 -->
+        <div class="member-card">
+          <div class="member-image-wrapper">
+            <img src="images/member2.jpg" alt="Michael Lee">
+          </div>
+          <h4>Michael Lee</h4>
+          <span class="member-role">Secretary</span>
+          <p>Operations & Events</p>
+          <div class="social-links">
+            <a href="https://twitter.com" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://instagram.com" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        
+        <!-- Member 3 -->
+        <div class="member-card">
+          <div class="member-image-wrapper">
+            <img src="images/member3.jpg" alt="Emma Davis">
+          </div>
+          <h4>Emma Davis</h4>
+          <span class="member-role">Treasurer</span>
+          <p>Finance & Budget</p>
+          <div class="social-links">
+            <a href="https://twitter.com" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://instagram.com" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OTHER MEMBERS SECTION -->
+  <section class="other-members section-hidden">
+    <div class="container">
+      <h2>Extended Team</h2>
+      <div class="other-grid">
+        <div class="other-member">
+          <img src="images/member4.jpg" alt="Member 4">
+          <p>Sarah Johnson</p>
+          <span class="member-role">Content Lead</span>
+        </div>
+        <div class="other-member">
+          <img src="images/member5.jpg" alt="Member 5">
+          <p>David Chen</p>
+          <span class="member-role">Tech Lead</span>
+        </div>
+        <div class="other-member">
+          <img src="images/member6.jpg" alt="Member 6">
+          <p>Lisa Wong</p>
+          <span class="member-role">Design Lead</span>
+        </div>
+        <div class="other-member">
+          <img src="images/member7.jpg" alt="Member 7">
+          <p>Alex Martinez</p>
+          <span class="member-role">Outreach Lead</span>
+        </div>
+        <div class="other-member">
+          <img src="images/member8.jpg" alt="Member 8">
+          <p>Jordan Taylor</p>
+          <span class="member-role">Workshop Lead</span>
+        </div>
+        <div class="other-member">
+          <img src="images/member9.jpg" alt="Member 9">
+          <p>Casey Park</p>
+          <span class="member-role">Community Manager</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script>
+
+  <script src="js/team.js"></script>
+</body>
+</html>

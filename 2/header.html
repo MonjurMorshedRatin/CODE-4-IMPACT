@@ -1,0 +1,43 @@
+<!-- Navbar -->
+<header class="navbar">
+  <div class="nav-container">
+    <!-- Logo -->
+    <div class="logo">
+      <a href="index.html">CODE 4 IMPACT</a>
+    </div>
+
+    <!-- Hamburger Menu Button -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Navigation Menu -->
+    <nav class="nav-menu" id="navMenu">
+      <ul>
+        <li><a href="news.html">NEWS</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="workshops.html">WORKSHOP</a></li>
+        <li><a href="magazines.html">MAGAZINES</a></li>
+        <li><a href="team.html">TEAM</a></li>
+      </ul>
+    </nav>
+
+    <!-- Join Button -->
+    <a href="join.html" class="join-btn">Join Us</a>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
+  
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', function() {
+      navMenu.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+  }
+</script>

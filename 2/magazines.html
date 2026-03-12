@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CODE 4 IMPACT Magazine - Student-driven tech publication">
+  <title>Magazines | CODE 4 IMPACT</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/magazines.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader" style="
+    position:fixed;
+    top:0; left:0; right:0; bottom:0;
+    background:#111;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    opacity:1;
+    transition:opacity 0.3s ease;
+  ">
+    <div style="
+      width:50px;
+      height:50px;
+      border:5px solid #4fa1f5;
+      border-top:5px solid transparent;
+      border-radius:50%;
+      animation:spin 1s linear infinite;
+    "></div>
+  </div>
+
+  <!-- Header Section -->
+  <div id="header-placeholder"></div>
+
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
+
+    window.addEventListener('load', function() {
+      const preloader = document.getElementById('preloader');
+      if (preloader) {
+        preloader.style.opacity = '0';
+        setTimeout(() => preloader.style.display = 'none', 300);
+      }
+    });
+  </script>
+
+  <!-- ========== NETFLIX STYLE HERO CAROUSEL ========== -->
+  <section class="magazine-hero">
+    <div class="hero-carousel">
+      <div class="carousel-slide active">
+        <img src="images/mag-cover-1.jpg" alt="Magazine Cover">
+        <div class="carousel-content">
+          <h1>Issue #1: The Future of Technology</h1>
+          <div class="magazine-meta">
+            <span><i class="fas fa-calendar"></i> March 2026</span>
+            <span><i class="fas fa-bookmark"></i> 24 Articles</span>
+          </div>
+          <p>Explore groundbreaking insights into artificial intelligence, web development, and innovative solutions reshaping our world.</p>
+          <div class="carousel-buttons">
+            <button class="btn-primary" onclick="document.getElementById('magazines').scrollIntoView({behavior: 'smooth'})">
+              <i class="fas fa-arrow-down"></i> Read Now
+            </button>
+            <button class="btn-secondary" onclick="alert('Preview available in magazine section')">
+              <i class="fas fa-info-circle"></i> Preview
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-slide">
+        <img src="images/mag-cover-2.jpg" alt="Magazine Cover">
+        <div class="carousel-content">
+          <h1>Issue #2: Web Development Revolution</h1>
+          <div class="magazine-meta">
+            <span><i class="fas fa-calendar"></i> February 2026</span>
+            <span><i class="fas fa-bookmark"></i> 20 Articles</span>
+          </div>
+          <p>Master the latest frameworks, tools, and best practices in modern web development with expert tutorials and case studies.</p>
+          <div class="carousel-buttons">
+            <button class="btn-primary" onclick="document.getElementById('magazines').scrollIntoView({behavior: 'smooth'})">
+              <i class="fas fa-arrow-down"></i> Read Now
+            </button>
+            <button class="btn-secondary" onclick="alert('Preview available in magazine section')">
+              <i class="fas fa-info-circle"></i> Preview
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-slide">
+        <img src="images/mag-cover-3.jpg" alt="Magazine Cover">
+        <div class="carousel-content">
+          <h1>Issue #3: Innovation & Entrepreneurship</h1>
+          <div class="magazine-meta">
+            <span><i class="fas fa-calendar"></i> January 2026</span>
+            <span><i class="fas fa-bookmark"></i> 18 Articles</span>
+          </div>
+          <p>Discover how students are building startups, launching projects, and creating real-world impact through technology.</p>
+          <div class="carousel-buttons">
+            <button class="btn-primary" onclick="document.getElementById('magazines').scrollIntoView({behavior: 'smooth'})">
+              <i class="fas fa-arrow-down"></i> Read Now
+            </button>
+            <button class="btn-secondary" onclick="alert('Preview available in magazine section')">
+              <i class="fas fa-info-circle"></i> Preview
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel Controls -->
+    <div class="carousel-controls">
+      <div class="carousel-dots" id="carousel-dots"></div>
+      <button class="carousel-arrow" id="prev-slide" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+      <button class="carousel-arrow" id="next-slide" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- ========== MAGAZINE SELECTION CAROUSEL ========== -->
+  <section class="magazine-selection" id="magazines">
+    <div class="container-lg">
+      <div class="selection-title">
+        <h2>Browse All Issues</h2>
+      </div>
+      <div class="magazine-carousel">
+        <div class="mag-item" onclick="selectMagazine(1)">
+          <img src="images/mag-cover-1.jpg" alt="Issue 1">
+          <div class="mag-item-info">
+            <h4>Issue #1</h4>
+            <p>March 2026 • 24 Articles</p>
+          </div>
+        </div>
+        <div class="mag-item" onclick="selectMagazine(2)">
+          <img src="images/mag-cover-2.jpg" alt="Issue 2">
+          <div class="mag-item-info">
+            <h4>Issue #2</h4>
+            <p>February 2026 • 20 Articles</p>
+          </div>
+        </div>
+        <div class="mag-item" onclick="selectMagazine(3)">
+          <img src="images/mag-cover-3.jpg" alt="Issue 3">
+          <div class="mag-item-info">
+            <h4>Issue #3</h4>
+            <p>January 2026 • 18 Articles</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MAGAZINE INFO SECTION ========== -->
+  <section class="magazine-info">
+    <div class="magazine-info-grid">
+      <div class="magazine-cover-large">
+        <img src="images/mag-cover-1.jpg" alt="Magazine Cover" id="mag-detail-cover">
+      </div>
+      <div class="magazine-detail">
+        <h2 id="mag-detail-title">Issue #1: The Future of Technology</h2>
+        <p id="mag-detail-desc">
+          Welcome to the inaugural issue of CODE 4 IMPACT Magazine! In this issue, we explore the cutting-edge technologies and innovations that are shaping the future. From artificial intelligence to web development, discover groundbreaking insights from our talented student writers and industry experts.
+        </p>
+
+        <div class="editors-section">
+          <div class="editors-title">
+            <i class="fas fa-users"></i> Editorial Team
+          </div>
+          <div class="editors-grid">
+            <div class="editor-card">
+              <img src="images/editor-1.jpg" alt="Chief Editor" class="editor-photo">
+              <h4>Rahim Ahmed</h4>
+              <p>Chief Editor</p>
+            </div>
+            <div class="editor-card">
+              <img src="images/editor-2.jpg" alt="Content Lead" class="editor-photo">
+              <h4>Fatima Khan</h4>
+              <p>Content Lead</p>
+            </div>
+            <div class="editor-card">
+              <img src="images/editor-3.jpg" alt="Design Lead" class="editor-photo">
+              <h4>Alex Thompson</h4>
+              <p>Design Lead</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ARTICLES SECTION ========== -->
+  <section class="articles-section" id="articles">
+    <div class="articles-container">
+      <h2>Featured Articles from <span id="articles-mag-title">Issue #1</span></h2>
+      <div class="articles-grid" id="articles-grid">
+        <!-- Articles will be loaded here based on selected magazine -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PDF VIEWER MODAL ========== -->
+  <div class="pdf-modal" id="pdf-modal">
+    <div class="pdf-container">
+      <div class="pdf-header">
+        <div class="pdf-title">
+          <h3 id="pdf-article-title">Article Title</h3>
+          <p id="pdf-article-author">By Author Name</p>
+        </div>
+        <div class="pdf-actions">
+          <a id="pdf-download-btn" href="#" download class="pdf-download">
+            <i class="fas fa-download"></i> Download PDF
+          </a>
+          <button class="pdf-close" onclick="closePdfModal()">
+            <i class="fas fa-times"></i> Close
+          </button>
+        </div>
+      </div>
+      <div class="pdf-viewer">
+        <iframe class="pdf-embed" id="pdf-iframe"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== CONTRIBUTION CTA ========== -->
+  <section class="news-cta">
+    <h2>Want to write for our magazine?</h2>
+    <p>
+      Students can submit tech articles, tutorials, project showcases, and innovative ideas.
+      Join our community of writers and share your knowledge!
+    </p>
+    <a href="#" class="btn-primary">Submit Your Article</a>
+  </section>
+
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+
+  <script src="js/script.js"></script>
+  <script>
+    // Fetch footer
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+
+    // ========== MAGAZINE DATA ==========
+    const magazineData = {
+      1: {
+        title: 'Issue #1: The Future of Technology',
+        cover: 'images/mag-cover-1.jpg',
+        month: 'March 2026',
+        articles: 24,
+        description: 'Welcome to the inaugural issue of CODE 4 IMPACT Magazine! In this issue, we explore the cutting-edge technologies and innovations that are shaping the future. From artificial intelligence to web development, discover groundbreaking insights from our talented student writers and industry experts.',
+        pdfLink: 'magazines/issue1.pdf',
+        articles: [
+          {
+            id: 1,
+            title: 'The Rise of Artificial Intelligence',
+            category: 'AI & Machine Learning',
+            author: 'Sarah Johnson',
+            date: '2026-03-15',
+            image: 'images/article1.jpg',
+            description: 'Explore how AI is revolutionizing industries and what students need to know about machine learning.',
+            pdf: 'magazines/articles/issue1-article1.pdf'
+          },
+          {
+            id: 2,
+            title: 'Web Development Best Practices 2026',
+            category: 'Web Development',
+            author: 'Mike Chen',
+            date: '2026-03-12',
+            image: 'images/article2.jpg',
+            description: 'Master the latest frameworks and tools for building modern, scalable web applications.',
+            pdf: 'magazines/articles/issue1-article2.pdf'
+          },
+          {
+            id: 3,
+            title: 'Sustainable Tech Solutions',
+            category: 'Innovation',
+            author: 'Emma Davis',
+            date: '2026-03-10',
+            image: 'images/article3.jpg',
+            description: 'How technology is being used to combat climate change and create sustainable futures.',
+            pdf: 'magazines/articles/issue1-article3.pdf'
+          },
+          {
+            id: 4,
+            title: 'Mobile App Security',
+            category: 'Security',
+            author: 'David Lee',
+            date: '2026-03-08',
+            image: 'images/article4.jpg',
+            description: 'Essential security practices every mobile developer should know and implement.',
+            pdf: 'magazines/articles/issue1-article4.pdf'
+          },
+          {
+            id: 5,
+            title: 'Cloud Computing Guide',
+            category: 'Cloud Technology',
+            author: 'Lisa Wong',
+            date: '2026-03-05',
+            image: 'images/article5.jpg',
+            description: 'Understanding AWS, Azure, and Google Cloud for modern application deployment.',
+            pdf: 'magazines/articles/issue1-article5.pdf'
+          },
+          {
+            id: 6,
+            title: 'The Future of Blockchain',
+            category: 'Blockchain',
+            author: 'James Park',
+            date: '2026-03-01',
+            image: 'images/article6.jpg',
+            description: 'Beyond cryptocurrency: Real-world applications of blockchain technology.',
+            pdf: 'magazines/articles/issue1-article6.pdf'
+          }
+        ]
+      },
+      2: {
+        title: 'Issue #2: Web Development Revolution',
+        cover: 'images/mag-cover-2.jpg',
+        month: 'February 2026',
+        articles: 20,
+        description: 'Dive deep into the world of modern web development. This issue covers the latest frameworks, tools, and methodologies that are transforming how we build web applications. Learn from industry experts and fellow student developers.',
+        pdfLink: 'magazines/issue2.pdf',
+        articles: [
+          {
+            id: 7,
+            title: 'React vs Vue: A Detailed Comparison',
+            category: 'Frontend',
+            author: 'Tom Wilson',
+            date: '2026-02-20',
+            image: 'images/article7.jpg',
+            description: 'Understanding the differences between popular JavaScript frameworks.',
+            pdf: 'magazines/articles/issue2-article1.pdf'
+          },
+          {
+            id: 8,
+            title: 'Backend Development with Node.js',
+            category: 'Backend',
+            author: 'Nina Patel',
+            date: '2026-02-18',
+            image: 'images/article8.jpg',
+            description: 'Build scalable backend systems using Node.js and Express.',
+            pdf: 'magazines/articles/issue2-article2.pdf'
+          },
+          {
+            id: 9,
+            title: 'Web Performance Optimization',
+            category: 'Performance',
+            author: 'Chris Garcia',
+            date: '2026-02-15',
+            image: 'images/article9.jpg',
+            description: 'Techniques to make your websites faster and more efficient.',
+            pdf: 'magazines/articles/issue2-article3.pdf'
+          },
+          {
+            id: 10,
+            title: 'CSS Grid and Flexbox Mastery',
+            category: 'Frontend',
+            author: 'Rachel Martinez',
+            date: '2026-02-12',
+            image: 'images/article10.jpg',
+            description: 'Create beautiful, responsive layouts with modern CSS techniques.',
+            pdf: 'magazines/articles/issue2-article4.pdf'
+          }
+        ]
+      },
+      3: {
+        title: 'Issue #3: Innovation & Entrepreneurship',
+        cover: 'images/mag-cover-3.jpg',
+        month: 'January 2026',
+        articles: 18,
+        description: 'Discover how CODE 4 IMPACT members are building startups and launching innovative projects. This issue focuses on entrepreneurship, project management, and turning ideas into reality.',
+        pdfLink: 'magazines/issue3.pdf',
+        articles: [
+          {
+            id: 11,
+            title: 'From Idea to Launch: Building Your First App',
+            category: 'Entrepreneurship',
+            author: 'Kevin Brown',
+            date: '2026-01-25',
+            image: 'images/article11.jpg',
+            description: 'A step-by-step guide to launching your own tech startup.',
+            pdf: 'magazines/articles/issue3-article1.pdf'
+          },
+          {
+            id: 12,
+            title: 'Project Management for Developers',
+            category: 'Management',
+            author: 'Angela Robinson',
+            date: '2026-01-20',
+            image: 'images/article12.jpg',
+            description: 'Tools and techniques for managing complex development projects.',
+            pdf: 'magazines/articles/issue3-article2.pdf'
+          },
+          {
+            id: 13,
+            title: 'Case Studies: Successful Student Projects',
+            category: 'Success Stories',
+            author: 'Priya Singh',
+            date: '2026-01-15',
+            image: 'images/article13.jpg',
+            description: 'Real stories of CODE 4 IMPACT members and their achievements.',
+            pdf: 'magazines/articles/issue3-article3.pdf'
+          }
+        ]
+      }
+    };
+
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const totalSlides = slides.length;
+    let autoSlideTimer;
+
+    // Initialize carousel dots
+    function initCarouselDots() {
+      const dotsContainer = document.getElementById('carousel-dots');
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'dot' + (i === 0 ? ' active' : '');
+        dot.onclick = () => goToSlide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function showSlide(n) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      document.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'));
+      
+      slides[n].classList.add('active');
+      document.querySelectorAll('.dot')[n].classList.add('active');
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      showSlide(currentSlide);
+      resetAutoSlide();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      showSlide(currentSlide);
+      resetAutoSlide();
+    }
+
+    function goToSlide(n) {
+      currentSlide = n;
+      showSlide(currentSlide);
+      resetAutoSlide();
+    }
+
+    function autoSlide() {
+      nextSlide();
+    }
+
+    function startAutoSlide() {
+      autoSlideTimer = setInterval(autoSlide, 5000);
+    }
+
+    function resetAutoSlide() {
+      clearInterval(autoSlideTimer);
+      startAutoSlide();
+    }
+
+    // Magazine selection
+    function selectMagazine(issueNumber) {
+      const mag = magazineData[issueNumber];
+      
+      // Update magazine info
+      document.getElementById('mag-detail-title').textContent = mag.title;
+      document.getElementById('mag-detail-cover').src = mag.cover;
+      document.getElementById('mag-detail-desc').textContent = mag.description;
+      document.getElementById('articles-mag-title').textContent = `Issue #${issueNumber}`;
+      
+      // Load articles
+      loadArticles(issueNumber);
+      
+      // Scroll to articles
+      setTimeout(() => {
+        document.getElementById('articles').scrollIntoView({ behavior: 'smooth' });
+      }, 300);
+    }
+
+    function loadArticles(issueNumber) {
+      const articles = magazineData[issueNumber].articles;
+      const articlesGrid = document.getElementById('articles-grid');
+      articlesGrid.innerHTML = '';
+
+      articles.forEach(article => {
+        const articleCard = document.createElement('div');
+        articleCard.className = 'article-card';
+        articleCard.innerHTML = `
+          <div class="article-image">
+            <img src="${article.image}" alt="${article.title}">
+          </div>
+          <div class="article-content">
+            <span class="article-tag">${article.category}</span>
+            <h3>${article.title}</h3>
+            <p>${article.description}</p>
+            <div class="article-meta">
+              <span><i class="fas fa-user"></i> ${article.author}</span>
+              <span><i class="fas fa-calendar"></i> ${new Date(article.date).toLocaleDateString()}</span>
+            </div>
+            <button class="article-read-btn" onclick="openPdfModal('${article.title}', '${article.author}', '${article.pdf}')">
+              Read Full Article
+            </button>
+          </div>
+        `;
+        articlesGrid.appendChild(articleCard);
+      });
+    }
+
+    function openPdfModal(title, author, pdfLink) {
+      document.getElementById('pdf-article-title').textContent = title;
+      document.getElementById('pdf-article-author').textContent = `By ${author}`;
+      document.getElementById('pdf-iframe').src = pdfLink;
+      document.getElementById('pdf-download-btn').href = pdfLink;
+      document.getElementById('pdf-modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePdfModal() {
+      document.getElementById('pdf-modal').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal on outside click
+    document.getElementById('pdf-modal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closePdfModal();
+      }
+    });
+
+    // Initialize
+    initCarouselDots();
+    startAutoSlide();
+    loadArticles(1);
+  </script>
+</body>
+</html>
+
+

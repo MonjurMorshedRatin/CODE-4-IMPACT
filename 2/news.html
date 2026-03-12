@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Latest news and updates from CODE 4 IMPACT community">
+  <title>News | CODE 4 IMPACT</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Page-specific styles */
+    .news-hero {
+      background: var(--dark-bg);
+      padding: 5rem 1rem;
+      margin-top: 4rem;
+      text-align: center;
+    }
+
+    .news-hero h1 {
+      font-size: var(--font-size-3xl);
+      color: var(--secondary-color);
+      margin-bottom: 1rem;
+    }
+
+    .news-hero p {
+      color: var(--text-light);
+      font-size: var(--font-size-lg);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .about-club {
+      max-width: 900px;
+      margin: auto;
+      padding: 3rem 1rem;
+    }
+
+    .about-club h2 {
+      font-size: var(--font-size-2xl);
+      margin-bottom: 1.5rem;
+      color: var(--primary-color);
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .about-club p {
+      font-size: var(--font-size-base);
+      line-height: 1.8;
+      color: var(--text-light);
+    }
+
+    .facebook-news {
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    .facebook-news h2 {
+      font-size: var(--font-size-2xl);
+      margin-bottom: 2rem;
+      color: var(--secondary-color);
+    }
+
+    .club-highlights {
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    .club-highlights h2 {
+      font-size: var(--font-size-2xl);
+      margin-bottom: 2rem;
+      color: var(--text-white);
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .highlight-card {
+      background: rgba(99, 102, 241, 0.08);
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      background: rgba(99, 102, 241, 0.15);
+    }
+
+    .highlight-card h3 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      font-size: var(--font-size-lg);
+    }
+
+    .highlight-card p {
+      color: var(--text-light);
+      font-size: var(--font-size-sm);
+      line-height: 1.6;
+    }
+
+    .news-cta {
+      background: var(--primary-gradient);
+      color: var(--text-white);
+      padding: 4rem 1rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .news-cta h2 {
+      color: var(--text-white);
+      font-size: var(--font-size-2xl);
+      margin-bottom: 1rem;
+    }
+
+    .news-cta p {
+      font-size: var(--font-size-base);
+      margin-bottom: 2rem;
+    }
+
+    .news-cta .btn-primary {
+      background: var(--text-white);
+      color: var(--secondary-color);
+      font-weight: 700;
+    }
+
+    .news-cta .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    @media screen and (min-width: 768px) {
+      .news-hero {
+        padding: 6rem 2rem;
+      }
+
+      .news-hero h1 {
+        font-size: 3.5rem;
+      }
+
+      .about-club {
+        padding: 4rem 2rem;
+      }
+
+      .highlight-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader" style="
+    position:fixed;
+    top:0; left:0; right:0; bottom:0;
+    background:#111;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    opacity:1;
+    transition:opacity 0.3s ease;
+  ">
+    <div style="
+      width:50px;
+      height:50px;
+      border:5px solid #4fa1f5;
+      border-top:5px solid transparent;
+      border-radius:50%;
+      animation:spin 1s linear infinite;
+    "></div>
+  </div>
+
+  <!-- Header Section -->
+  <div id="header-placeholder"></div>
+
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
+
+    // Hide preloader when page loads
+    window.addEventListener('load', function() {
+      const preloader = document.getElementById('preloader');
+      if (preloader) {
+        preloader.style.opacity = '0';
+        setTimeout(() => preloader.style.display = 'none', 300);
+      }
+    });
+  </script>
+
+  <!-- HERO -->
+  <section class="news-hero">
+    <h1>News & Updates</h1>
+    <p>Follow the latest activities, workshops, and announcements from CODE 4 IMPACT.</p>
+  </section>
+
+  <!-- ABOUT CLUB -->
+  <section class="about-club">
+    <h2>About CODE 4 IMPACT</h2>
+    <p>
+      CODE 4 IMPACT is an ICT club focused on empowering students through
+      coding, innovation, and technology. Our community organizes workshops,
+      publishes digital magazines, builds projects, and encourages students
+      to explore the world of programming and digital creativity.
+    </p>
+  </section>
+
+  <!-- FACEBOOK NEWS -->
+  <section class="facebook-news">
+    <h2>Latest From Our Facebook</h2>
+    <div class="facebook-feed">
+      <div class="fb-page"
+      data-href="https://www.facebook.com/profile.php?id=61582199273210"
+      data-tabs="timeline"
+      data-width="500"
+      data-height="600"
+      data-small-header="false"
+      data-hide-cover="false"
+      data-show-facepile="true">
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section class="club-highlights">
+    <h2>Club Highlights</h2>
+    <div class="highlight-grid">
+      <div class="highlight-card">
+        <h3>AI Workshop</h3>
+        <p>Students learned the fundamentals of artificial intelligence and machine learning.</p>
+      </div>
+      <div class="highlight-card">
+        <h3>Magazine Release</h3>
+        <p>The latest issue of our tech magazine explores the future of web development.</p>
+      </div>
+      <div class="highlight-card">
+        <h3>Web Development Bootcamp</h3>
+        <p>A 4-week program teaching HTML, CSS, and JavaScript to beginners.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOIN CTA -->
+  <section class="news-cta">
+    <h2>Want to Join Our Community?</h2>
+    <p>Become a member of CODE 4 IMPACT and start building the future with technology.</p>
+    <a href="join.html" class="btn-primary">Join the Club</a>
+  </section>
+
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script>
+
+  <!-- FACEBOOK SCRIPT -->
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous"
+  src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0">
+  </script>
+</body>
+</html>

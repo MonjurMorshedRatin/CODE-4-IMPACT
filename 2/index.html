@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CODE 4 IMPACT - Student-driven ICT Club</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!--loader section-->
+  <!-- Preloader -->
+<div id="preloader" style="
+  position:fixed;
+  top:0; left:0; right:0; bottom:0;
+  background:#111;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  opacity:1;
+  transition:opacity 0.3s ease;
+">
+  <div style="
+    width:50px;
+    height:50px;
+    border:5px solid #4fa1f5;
+    border-top:5px solid transparent;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+  "></div>
+</div>
+
+
+  <!-- Header Section -->
+  <div id="header-placeholder"></div>
+
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
+
+    window.addEventListener('load', function() {
+      const preloader = document.getElementById('preloader');
+      if (preloader) {
+        preloader.style.opacity = '0';
+        setTimeout(() => preloader.style.display = 'none', 300);
+      }
+    });
+  </script>
+
+<!-- Hero Section -->
+
+<section class="hero">
+
+  <div class="hero-container">
+
+    <div class="hero-text">
+      <h1>Empowering Students Through Code</h1>
+
+      <p>
+        CODE 4 IMPACT is a student-driven ICT club focused on programming,
+        innovation, and building real-world tech solutions.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#" class="btn-primary">Join Us</a>
+        <a href="#" class="btn-secondary">Workshops</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="code-animation">
+        &lt;/&gt;
+      </div>
+    </div>
+
+  </div>
+
+  <div class="scroll-indicator"></div>
+
+</section>
+
+
+
+<!--  highlights -->
+ <section class="highlights">
+
+  <div class="highlights-container">
+
+    <a href="https://facebook.com/your-post-1" class="highlight-card" target="_blank">
+      <div class="icon">
+        <img src="icons/coding.svg" alt="Coding Projects" loading="lazy">
+      </div>
+      <h3>Coding Projects</h3>
+      <p>Real software & web apps.</p>
+    </a>
+
+    <a href="https://instagram.com/your-post-2" class="highlight-card" target="_blank">
+      <div class="icon">
+        <img src="icons/workshop.svg" alt="Workshops" loading="lazy">
+      </div>
+      <h3>Workshops</h3>
+      <p>Hands-on coding sessions.</p>
+    </a>
+
+    <a href="https://linkedin.com/your-post-3" class="highlight-card" target="_blank">
+      <div class="icon">
+        <img src="icons/achievement.svg" alt="Achievements" loading="lazy">
+      </div>
+      <h3>Achievements</h3>
+      <p>Competitions & milestones.</p>
+    </a>
+
+    <a href="https://twitter.com/your-post-4" class="highlight-card" target="_blank">
+      <div class="icon">
+        <img src="icons/impact.svg" alt="Community Impact" loading="lazy">
+      </div>
+      <h3>Impact</h3>
+      <p>Tech solving real problems.</p>
+    </a>
+
+  </div>
+
+</section>
+
+<!-- about -->
+ <section class="about">
+
+  <div class="about-container">
+
+    <!-- Left: Image / Illustration -->
+    <div class="about-image">
+      <img src="images/about-illustration.png" alt="CODE 4 IMPACT" loading="lazy">
+    </div>
+
+    <!-- Right: Text -->
+    <div class="about-text">
+      <h2>About CODE 4 IMPACT</h2>
+      <p>
+        CODE 4 IMPACT is an ICT club dedicated to building future innovators
+        through programming, technology exploration, and collaborative projects.
+      </p>
+      <a href="news.html" class="btn-read-more">Read More →</a>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- featured projects -->
+<section class="featured">
+
+  <div class="featured-container">
+
+    <h2 class="section-title">Featured Projects</h2>
+
+    <div class="card-grid">
+
+      <!-- Card 1 -->
+      <div class="project-card">
+        <img src="images/president.jpg" class="card-img" loading="lazy">
+
+        <div class="card-overlay">
+          <h3>Smart Attendance System</h3>
+          <p>Face recognition based attendance.</p>
+
+        <div class="tech-stack">
+  <i class="fa-brands fa-python"></i>
+  <i class="fa-solid fa-eye"></i>
+  <i class="fa-solid fa-database"></i>
+</div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="project-card">
+        <img src="images/project2.jpg" class="card-img" loading="lazy">
+
+        <div class="card-overlay">
+          <h3>School Management Website</h3>
+          <p>Web platform for digital school management.</p>
+
+          <div class="tech-stack">
+  <i class="fa-brands fa-html5"></i>
+  <i class="fa-brands fa-css3-alt"></i>
+  <i class="fa-brands fa-js"></i>
+</div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="project-card">
+        <img src="images/project3.jpg" class="card-img" loading="lazy">
+
+        <div class="card-overlay">
+          <h3>AI Study Assistant</h3>
+          <p>AI tool for helping students learn.</p>
+
+         <div class="tech-stack">
+  <!-- Python Icon -->
+  <i class="fa-brands fa-python" title="Python"></i>
+
+  
+</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="section-btn">
+      <a href="projects.html">View All Projects →</a>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- timeline -->
+ <section class="club-updates">
+
+  <div class="updates-container">
+
+    <h2 class="section-title">Club Activity</h2>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" data-tab="workshops">Workshops</button>
+      <button class="tab" data-tab="achievements">Achievements</button>
+      <button class="tab" data-tab="news">News</button>
+    </div>
+
+    <!-- Workshops -->
+    <div class="tab-content active" id="workshops">
+
+      <div class="timeline">
+
+        <div class="timeline-card">
+          <span class="date">12 Aug</span>
+          <h3>Python Bootcamp</h3>
+          <p>Learn Python fundamentals and automation.</p>
+        </div>
+
+        <div class="timeline-card">
+          <span class="date">25 Aug</span>
+          <h3>Web Development Workshop</h3>
+          <p>Introduction to HTML, CSS and modern web design.</p>
+        </div>
+
+        <div class="timeline-card">
+          <span class="date">10 Sep</span>
+          <h3>UI/UX Design Class</h3>
+          <p>Learn how to design user-friendly interfaces.</p>
+        </div>
+
+      </div>
+
+      <div class="section-btn">
+        <a href="#">Explore Workshops →</a>
+      </div>
+      <br>
+      <br>
+
+    </div>
+
+    <!-- Achievements -->
+    <div class="tab-content" id="achievements">
+
+      <div class="stats-grid">
+
+        <div class="stat">
+          <h3 class="counter" data-target="50">0</h3>
+          <p>Members</p>
+        </div>
+
+        <div class="stat">
+          <h3 class="counter" data-target="20">0</h3>
+          <p>Projects Built</p>
+        </div>
+
+        <div class="stat">
+          <h3 class="counter" data-target="15">0</h3>
+          <p>Workshops</p>
+        </div>
+
+        <div class="stat">
+          <h3 class="counter" data-target="5">0</h3>
+          <p>Competitions</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- News -->
+    <div class="tab-content" id="news">
+
+      <div class="news-grid">
+
+        <div class="news-card">
+          <img src="images/news1.jpg" loading="lazy">
+          <h3>CODE 4 IMPACT Launch Event</h3>
+          <p>Our official club launch introducing our mission and goals.</p>
+          <a href="#">Read More</a>
+        </div>
+
+        <div class="news-card">
+          <img src="images/news2.jpg" loading="lazy">
+          <h3>First Web Development Workshop</h3>
+          <p>Students learned the basics of modern web development.</p>
+          <a href="#">Read More</a>
+        </div>
+
+        <div class="news-card">
+          <img src="images/news3.jpg" loading="lazy">
+          <h3>Students Win Hackathon</h3>
+          <p>Our members built an AI solution and secured first place.</p>
+          <a href="#">Read More</a>
+        </div>
+
+      </div>
+
+      <div class="section-btn">
+        <a href="#">View All News →</a>
+      </div>
+<br>
+<br>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- team -->
+ <section class="team-preview">
+  <h2>Meet the Core Team</h2>
+  <p class="team-subtitle">The people leading CODE 4 IMPACT</p>
+
+  <div class="team-grid">
+
+    <!-- Member 1 -->
+    <div class="team-card">
+      <img src="images/president.jpg" alt="President" loading="lazy">
+      <div class="team-overlay">
+        <h3 style="font-size: 13px;">MD. Monjur Morshed Ratin</h3>
+        <p>President</p>
+
+        <div class="team-socials">
+          <a href="#">🌐</a>
+          <a href="#">💼</a>
+          <a href="#">📧</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Member 2 -->
+    <div class="team-card">
+      <img src="images/vp.jpg" alt="Vice President" loading="lazy">
+      <div class="team-overlay">
+        <h3 style="font-size: 13px;">Ahnaf Jahdami Mahib</h3>
+        <p>Vice President</p>
+
+        <div class="team-socials">
+          <a href="#">🌐</a>
+          <a href="#">💼</a>
+          <a href="#">📧</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Member 3 -->
+    <div class="team-card">
+      <img src="images/techlead.jpg" alt="Technical Lead" loading="lazy">
+      <div class="team-overlay">
+        <h3>Rifat Ahmed</h3>
+        <p>Technical Lead</p>
+
+        <div class="team-socials">
+          <a href="#">🌐</a>
+          <a href="#">💼</a>
+          <a href="#">📧</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Member 4 -->
+    <div class="team-card">
+      <img src="images/designlead.jpg" alt="Design Lead" loading="lazy">
+      <div class="team-overlay">
+        <h3>Nusrat Islam</h3>
+        <p>Design Lead</p>
+
+        <div class="team-socials">
+          <a href="#">🌐</a>
+          <a href="#">💼</a>
+          <a href="#">📧</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="team-button">
+    <a href="team.html">Meet The Team →</a>
+  </div>
+</section>
+
+
+<!--join us-->
+<section class="join-section">
+
+  <div class="join-container">
+
+    <!-- LEFT SIDE -->
+    <div class="join-left">
+
+      <h2>Ready to Build the Future?</h2>
+
+      <p>
+        Join <strong>CODE 4 IMPACT</strong> and start learning, building,
+        and innovating with technology.
+      </p>
+
+      <a href="join.html" class="join-btn">Join Us</a>
+
+    </div>
+
+
+    <!-- RIGHT SIDE -->
+    <div class="join-right">
+
+      <h3>Leave a Comment About Our Website</h3>
+
+      <form class="comment-form">
+
+        <input type="text" placeholder="Your Name">
+
+        <textarea placeholder="Your thoughts about our website..."></textarea>
+
+        <button type="submit">Send Comment</button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!--footer  -->
+<div id="footer-placeholder"></div>
+
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
+</script>
+
+<script src="js/script.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
