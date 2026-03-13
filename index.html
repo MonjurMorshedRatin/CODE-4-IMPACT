@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
+  <title>CODE 4 IMPACT - Student-driven ICT Club</title>
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -35,13 +35,22 @@
   <!-- Header Section -->
   <div id="header-placeholder"></div>
 
-<script>
-  fetch('header.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('header-placeholder').innerHTML = data;
+  <script src="js/theme.js"></script>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
+
+    window.addEventListener('load', function() {
+      const preloader = document.getElementById('preloader');
+      if (preloader) {
+        preloader.style.opacity = '0';
+        setTimeout(() => preloader.style.display = 'none', 300);
+      }
     });
-</script>
+  </script>
 
 <!-- Hero Section -->
 
@@ -58,8 +67,8 @@
       </p>
 
       <div class="hero-buttons">
-        <a href="#" class="btn-primary">Join Us</a>
-        <a href="#" class="btn-secondary">Workshops</a>
+        <a href="join.html" class="btn-primary">Join Us</a>
+        <a href="workshops.html" class="btn-secondary">Workshops</a>
       </div>
     </div>
 
@@ -84,7 +93,7 @@
 
     <a href="https://facebook.com/your-post-1" class="highlight-card" target="_blank">
       <div class="icon">
-        <img src="icons/coding.svg" alt="Coding Projects" loading="lazy">
+        <img src="images/Mind Over Matter Book Cover - Cover.png" alt="Coding Projects" loading="lazy">
       </div>
       <h3>Coding Projects</h3>
       <p>Real software & web apps.</p>
@@ -92,7 +101,7 @@
 
     <a href="https://instagram.com/your-post-2" class="highlight-card" target="_blank">
       <div class="icon">
-        <img src="icons/workshop.svg" alt="Workshops" loading="lazy">
+        <img src="images/ChatGPT Image Jan 10, 2026, 05_14_45 AM.png" alt="Workshops" loading="lazy">
       </div>
       <h3>Workshops</h3>
       <p>Hands-on coding sessions.</p>
@@ -100,7 +109,7 @@
 
     <a href="https://linkedin.com/your-post-3" class="highlight-card" target="_blank">
       <div class="icon">
-        <img src="icons/achievement.svg" alt="Achievements" loading="lazy">
+        <img src="images/ddRDHNp5_400x400.jpg" alt="Achievements" loading="lazy">
       </div>
       <h3>Achievements</h3>
       <p>Competitions & milestones.</p>
@@ -108,7 +117,7 @@
 
     <a href="https://twitter.com/your-post-4" class="highlight-card" target="_blank">
       <div class="icon">
-        <img src="icons/impact.svg" alt="Community Impact" loading="lazy">
+        <img src="images/WhatsApp Image 2025-12-21 at 12.10.04 AM.jpeg" alt="Community Impact" loading="lazy">
       </div>
       <h3>Impact</h3>
       <p>Tech solving real problems.</p>
@@ -142,7 +151,7 @@
 
 </section>
 
-<!-- events-->
+<!-- featured projects -->
 <section class="featured">
 
   <div class="featured-container">
@@ -153,48 +162,50 @@
 
       <!-- Card 1 -->
       <div class="project-card">
-        <img src="images/project1.jpg" class="card-img" loading="lazy">
+        <img src="images/smart-attendance-system.jpg" class="card-img" loading="lazy">
 
         <div class="card-overlay">
           <h3>Smart Attendance System</h3>
           <p>Face recognition based attendance.</p>
 
-          <div class="tech-stack">
-            <img src="icons/python.svg" loading="lazy">
-            <img src="icons/opencv.svg" loading="lazy">
-            <img src="icons/mysql.svg" loading="lazy">
-          </div>
+        <div class="tech-stack">
+  <i class="fa-brands fa-python"></i>
+  <i class="fa-solid fa-eye"></i>
+  <i class="fa-solid fa-database"></i>
+</div>
         </div>
       </div>
 
       <!-- Card 2 -->
       <div class="project-card">
-        <img src="images/project2.jpg" class="card-img" loading="lazy">
+        <img src="images/seedream-4-high-res-fal_b_A_dramatic_black_and.jpeg" class="card-img" loading="lazy">
 
         <div class="card-overlay">
           <h3>School Management Website</h3>
           <p>Web platform for digital school management.</p>
 
           <div class="tech-stack">
-            <img src="icons/html.svg" loading="lazy">
-            <img src="icons/css.svg" loading="lazy">
-            <img src="icons/js.svg" loading="lazy">
-          </div>
+  <i class="fa-brands fa-html5"></i>
+  <i class="fa-brands fa-css3-alt"></i>
+  <i class="fa-brands fa-js"></i>
+</div>
         </div>
       </div>
 
       <!-- Card 3 -->
       <div class="project-card">
-        <img src="images/project3.jpg" class="card-img" loading="lazy">
+        <img src="images/ai-study-assistant.jpg" class="card-img" loading="lazy">
 
         <div class="card-overlay">
           <h3>AI Study Assistant</h3>
           <p>AI tool for helping students learn.</p>
 
-          <div class="tech-stack">
-            <img src="icons/python.svg" loading="lazy">
-            <img src="icons/tensorflow.svg" loading="lazy">
-          </div>
+         <div class="tech-stack">
+  <!-- Python Icon -->
+  <i class="fa-brands fa-python" title="Python"></i>
+
+  
+</div>
         </div>
       </div>
 
@@ -228,27 +239,27 @@
       <div class="timeline">
 
         <div class="timeline-card">
-          <span class="date">12 Aug</span>
-          <h3>Python Bootcamp</h3>
-          <p>Learn Python fundamentals and automation.</p>
+          <span class="date">12 feb</span>
+          <h3>Starting The Club</h3>
+          <p>Learn basic fundamentals and automation.</p>
         </div>
 
         <div class="timeline-card">
-          <span class="date">25 Aug</span>
-          <h3>Web Development Workshop</h3>
-          <p>Introduction to HTML, CSS and modern web design.</p>
+          <span class="date">25 feb</span>
+          <h3>Starting Our Club</h3>
+          <p>making people interested in our activities</p>
         </div>
 
         <div class="timeline-card">
           <span class="date">10 Sep</span>
-          <h3>UI/UX Design Class</h3>
-          <p>Learn how to design user-friendly interfaces.</p>
+          <h3>Our First Online Class</h3>
+          <p>Introduction to HTML, CSS and modern web design</p>
         </div>
 
       </div>
 
       <div class="section-btn">
-        <a href="#">Explore Workshops →</a>
+        <a href="workshops.html">Explore Workshops →</a>
       </div>
       <br>
       <br>
@@ -261,22 +272,22 @@
       <div class="stats-grid">
 
         <div class="stat">
-          <h3 class="counter" data-target="50">0</h3>
+          <h3 class="counter" data-target="35">0</h3>
           <p>Members</p>
         </div>
 
         <div class="stat">
-          <h3 class="counter" data-target="20">0</h3>
+          <h3 class="counter" data-target="5">0</h3>
           <p>Projects Built</p>
         </div>
 
         <div class="stat">
-          <h3 class="counter" data-target="15">0</h3>
+          <h3 class="counter" data-target="2">0</h3>
           <p>Workshops</p>
         </div>
 
         <div class="stat">
-          <h3 class="counter" data-target="5">0</h3>
+          <h3 class="counter" data-target="1">0</h3>
           <p>Competitions</p>
         </div>
 
@@ -313,7 +324,7 @@
       </div>
 
       <div class="section-btn">
-        <a href="#">View All News →</a>
+        <a href="news.html">View All News →</a>
       </div>
 <br>
 <br>
@@ -364,7 +375,7 @@
     <div class="team-card">
       <img src="images/techlead.jpg" alt="Technical Lead" loading="lazy">
       <div class="team-overlay">
-        <h3>Rifat Ahmed</h3>
+        <h3>Srijan Joy</h3>
         <p>Technical Lead</p>
 
         <div class="team-socials">
@@ -379,8 +390,8 @@
     <div class="team-card">
       <img src="images/designlead.jpg" alt="Design Lead" loading="lazy">
       <div class="team-overlay">
-        <h3>Nusrat Islam</h3>
-        <p>Design Lead</p>
+        <h3>Arsalan Amin Oyan</h3>
+        <p>NIGGA</p>
 
         <div class="team-socials">
           <a href="#">🌐</a>
@@ -441,80 +452,49 @@
 
 
 <!--footer  -->
-<footer class="site-footer">
-
-  <div class="footer-container">
-
-    <!-- Logo + Description -->
-    <div class="footer-about">
-
-      <h2 class="footer-logo">CODE 4 IMPACT</h2>
-
-      <img src="images/footer-illustration.png" alt="Footer Illustration" loading="lazy">
-
-    </div>
-
-
-    <!-- Social Links -->
-<div class="footer-social">
-  <h3>Connect With Us</h3>
-  <div class="social-icons">
-    <a href="#"><i class="fab fa-facebook-f"></i></a>
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-  </div>
-</div>
-  </div>
-<br>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--footer  -->
-<div id="footer"></div>
+<div id="footer-placeholder"></div>
 
 <script>
-fetch("footer.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("footer").innerHTML = data;
-  });
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
 </script>
 
-<script src="script.js"></script>
+<script src="js/script.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

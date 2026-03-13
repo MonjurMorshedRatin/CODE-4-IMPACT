@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Workshops, events, and activities by CODE 4 IMPACT">
+  <title>Workshops & Events | CODE 4 IMPACT</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/workshops.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader" style="
+    position:fixed;
+    top:0; left:0; right:0; bottom:0;
+    background:#111;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    opacity:1;
+    transition:opacity 0.3s ease;
+  ">
+    <div style="
+      width:50px;
+      height:50px;
+      border:5px solid #4fa1f5;
+      border-top:5px solid transparent;
+      border-radius:50%;
+      animation:spin 1s linear infinite;
+    "></div>
+  </div>
+
+  <!-- Header Section -->
+  <div id="header-placeholder"></div>
+
+  <script src="js/theme.js"></script>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
+
+    window.addEventListener('load', function() {
+      const preloader = document.getElementById('preloader');
+      if (preloader) {
+        preloader.style.opacity = '0';
+        setTimeout(() => preloader.style.display = 'none', 300);
+      }
+    });
+  </script>
+
+<!-- HERO -->
+
+<section class="workshop-hero">
+
+<div class="container hero-content">
+
+<h1>Workshops & Events</h1>
+
+<p>
+Hands-on coding sessions, tech workshops, and innovation events
+organized by CODE 4 IMPACT.
+</p>
+
+<a href="#activities" class="btn-primary">Explore Activities</a>
+
+</div>
+
+</section>
+
+
+<!-- ACTIVITIES -->
+
+<section id="activities" class="activities container">
+
+<h2 class="section-title">Upcoming Activities</h2>
+
+<div class="tabs">
+
+<button class="tab active" data-tab="workshops">Workshops</button>
+<button class="tab" data-tab="events">Events</button>
+
+</div>
+
+
+<!-- WORKSHOPS -->
+
+<div class="tab-content active" id="workshops">
+
+<div class="activity-grid">
+
+<div class="activity-card">
+
+<img src="images/Mind Over Matter Book Cover - Cover.png">
+
+<div class="card-overlay">
+
+<h3>Python Bootcamp</h3>
+
+<p>Learn Python fundamentals and automation tools.</p>
+
+<span class="date">Aug 12</span>
+
+</div>
+
+</div>
+
+
+<div class="activity-card">
+
+<img src="images/ChatGPT Image Jan 10, 2026, 05_14_45 AM.png">
+
+<div class="card-overlay">
+
+<h3>Web Development Workshop</h3>
+
+<p>Build modern responsive websites.</p>
+
+<span class="date">Aug 25</span>
+
+</div>
+
+</div>
+
+
+<div class="activity-card">
+
+<img src="images/WhatsApp Image 2025-12-21 at 12.10.04 AM.jpeg">
+
+<div class="card-overlay">
+
+<h3>UI/UX Design Class</h3>
+
+<p>Design beautiful interfaces using modern tools.</p>
+
+<span class="date">Sep 10</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- EVENTS -->
+
+<div class="tab-content" id="events">
+
+<div class="activity-grid">
+
+<div class="activity-card">
+
+<img src="images/ai.jpg">
+
+<div class="card-overlay">
+
+<h3>Tech Talk: Future of AI</h3>
+
+<p>Guest speaker discussing AI innovation.</p>
+
+<span class="date">Sep 3</span>
+
+</div>
+
+</div>
+
+
+<div class="activity-card">
+
+<img src="images/hackathon.jpg">
+
+<div class="card-overlay">
+
+<h3>CODE 4 IMPACT Hackathon</h3>
+
+<p>24 hour coding competition.</p>
+
+<span class="date">Sep 20</span>
+
+</div>
+
+</div>
+
+
+<div class="activity-card">
+
+<img src="images/startup.jpg">
+
+<div class="card-overlay">
+
+<h3>Startup Idea Pitch</h3>
+
+<p>Students pitch innovative technology ideas.</p>
+
+<span class="date">Oct 5</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- FEATURED EVENT -->
+
+<section class="featured">
+
+<div class="container featured-grid">
+
+<div class="featured-image">
+<img src="images/seedream-4-high-res-fal_b_A_dramatic_black_and.jpeg">
+</div>
+
+<div class="featured-text">
+
+<h2>Featured Event</h2>
+
+<h3>CODE 4 IMPACT Hackathon</h3>
+
+<p>
+Join our biggest coding event where students collaborate
+to build real-world tech solutions in 24 hours.
+</p>
+<br>
+<br>
+<a href="#" class="btn-primary">Register Now</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+<div class="container">
+
+<h2>Ready to learn something new?</h2>
+
+<p>Join our workshops and build real-world tech skills.</p>
+<br>
+<br>
+
+
+<a href="#" class="btn-primary big">Join CODE 4 IMPACT</a>
+
+</div>
+
+</section>
+
+
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script>
+
+  <script src="js/script.js"></script>
+  <script src="js/workshops.js"></script>
+</body>
+</html>

@@ -1,325 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join CODE 4 IMPACT ICT Club - Learn programming and technology">
+  <title>Join CODE 4 IMPACT</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Join page specific styles */
+    .hero {
+      text-align: center;
+      padding: 5rem 1rem;
+      margin-top: 4rem;
+      background: var(--dark-bg);
+    }
 
-<title>Join CODE 4 IMPACT</title>
+    .hero h1 {
+      font-size: var(--font-size-3xl);
+      margin-bottom: 1rem;
+      color: var(--text-white);
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    .hero p {
+      font-size: var(--font-size-lg);
+      color: var(--text-light);
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
+    .start-btn {
+      background: var(--primary-gradient);
+      border: none;
+      padding: 1rem 2rem;
+      font-size: var(--font-size-base);
+      color: var(--text-white);
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: var(--transition);
+      font-weight: 600;
+      box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+    }
 
+    .start-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 30px rgba(6, 182, 212, 0.5);
+    }
 
-<div id="header-placeholder"></div>
+    /* INSTRUCTIONS */
+    .instructions {
+      display: none;
+      padding: 3rem 1rem;
+      animation: fadeIn 0.6s ease;
+    }
 
-<script>
-  fetch('header.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('header-placeholder').innerHTML = data;
-    });
-</script>
+    .instructions h2 {
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: var(--font-size-2xl);
+      color: var(--text-white);
+    }
 
+    /* STEPS */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
+    .step {
+      background: rgba(99, 102, 241, 0.08);
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+    }
 
+    .step:hover {
+      background: rgba(99, 102, 241, 0.15);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
 
-<style>
+    .step h3 {
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+      font-size: var(--font-size-lg);
+    }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+    .step p {
+      color: var(--text-light);
+      font-size: var(--font-size-sm);
+    }
 
-body{
-background:#0f172a;
-color:#e2e8f0;
-line-height:1.6;
-}
+    /* COMMITTEE */
+    .committee {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-.container{
-width:90%;
-max-width:1100px;
-margin:auto;
-}
+    .member {
+      background: rgba(99, 102, 241, 0.08);
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      text-align: center;
+      transition: var(--transition);
+    }
 
-/* HERO */
+    .member:hover {
+      background: rgba(99, 102, 241, 0.15);
+      transform: translateY(-4px);
+    }
 
-.hero{
-text-align:center;
-padding:100px 20px 70px;
-}
+    .member img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      object-fit: cover;
+    }
 
-.hero h1{
-font-size:48px;
-margin-bottom:15px;
-color:white;
-}
+    .member h4 {
+      margin-bottom: 0.5rem;
+      color: var(--text-white);
+      font-size: var(--font-size-base);
+    }
 
-.hero p{
-font-size:18px;
-color:#94a3b8;
-margin-bottom:35px;
-}
+    .member p {
+      font-size: var(--font-size-sm);
+      color: var(--text-light);
+      margin-bottom: 1rem;
+    }
 
-.start-btn{
-background:#3b82f6;
-border:none;
-padding:16px 35px;
-font-size:18px;
-color:white;
-border-radius:10px;
-cursor:pointer;
-transition:.3s;
-}
+    .follow-btn {
+      display: inline-block;
+      background: var(--primary-gradient);
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      color: var(--text-white);
+      transition: var(--transition);
+      font-weight: 600;
+      font-size: var(--font-size-sm);
+    }
 
-.start-btn:hover{
-background:#2563eb;
-transform:scale(1.05);
-}
+    .follow-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+    }
 
-/* INSTRUCTIONS */
+    /* MESSAGE */
+    .message {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 0 1rem;
+    }
 
-.instructions{
-display:none;
-padding:60px 0;
-animation:fadeIn .6s ease;
-}
+    .message p {
+      color: var(--text-light);
+      margin-bottom: 1rem;
+      font-size: var(--font-size-base);
+    }
 
-.instructions h2{
-text-align:center;
-margin-bottom:50px;
-font-size:32px;
-}
+    .message a {
+      background: var(--primary-gradient);
+      padding: 1rem 2rem;
+      border-radius: var(--radius-full);
+      color: var(--text-white);
+      text-decoration: none;
+      font-size: var(--font-size-base);
+      transition: var(--transition);
+      display: inline-block;
+      font-weight: 600;
+      box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+    }
 
-/* STEPS */
+    .message a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 30px rgba(6, 182, 212, 0.5);
+    }
 
-.steps{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-margin-bottom:60px;
-}
+    /* ANIMATION */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-.step{
-background:#1e293b;
-padding:25px;
-border-radius:12px;
-}
+    @media screen and (min-width: 768px) {
+      .hero {
+        padding: 6rem 2rem;
+      }
 
-.step h3{
-margin-bottom:10px;
-color:#60a5fa;
-}
+      .instructions {
+        padding: 4rem 2rem;
+      }
 
-/* COMMITTEE */
+      .steps {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
 
-.committee{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-margin-top:25px;
-}
-
-.member{
-background:#1e293b;
-padding:25px;
-border-radius:12px;
-text-align:center;
-}
-
-.member img{
-width:90px;
-height:90px;
-border-radius:50%;
-margin-bottom:10px;
-}
-
-.member h4{
-margin-bottom:5px;
-color:white;
-}
-
-.member p{
-font-size:14px;
-color:#94a3b8;
-margin-bottom:15px;
-}
-
-.follow-btn{
-display:inline-block;
-background:#22c55e;
-padding:10px 20px;
-border-radius:8px;
-text-decoration:none;
-color:white;
-transition:.3s;
-}
-
-.follow-btn:hover{
-background:#16a34a;
-}
-
-/* MESSAGE */
-
-.message{
-text-align:center;
-margin-top:50px;
-}
-
-.message a{
-background:#f97316;
-padding:14px 30px;
-border-radius:10px;
-color:white;
-text-decoration:none;
-font-size:16px;
-transition:.3s;
-}
-
-.message a:hover{
-background:#ea580c;
-}
-
-/* FOOTER */
-
-footer{
-margin-top:80px;
-padding:25px;
-text-align:center;
-background:#020617;
-color:#94a3b8;
-}
-
-/* ANIMATION */
-
-@keyframes fadeIn{
-from{opacity:0;transform:translateY(20px);}
-to{opacity:1;transform:translateY(0);}
-}
-
-</style>
+      .committee {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <!-- Preloader -->
+  <div id="preloader" style="
+    position:fixed;
+    top:0; left:0; right:0; bottom:0;
+    background:#111;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    opacity:1;
+    transition:opacity 0.3s ease;
+  ">
+    <div style="
+      width:50px;
+      height:50px;
+      border:5px solid #4fa1f5;
+      border-top:5px solid transparent;
+      border-radius:50%;
+      animation:spin 1s linear infinite;
+    "></div>
+  </div>
 
-<!-- HERO -->
+  <!-- Header Section -->
+  <div id="header-placeholder"></div>
 
-<section class="hero">
+  <script src="js/theme.js"></script>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
 
-<div class="container">
+    window.addEventListener('load', function() {
+      const preloader = document.getElementById('preloader');
+      if (preloader) {
+        preloader.style.opacity = '0';
+        setTimeout(() => preloader.style.display = 'none', 300);
+      }
+    });
+  </script>
 
-<h1>Join CODE 4 IMPACT 🚀</h1>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>Join CODE 4 IMPACT 🚀</h1>
+      <p>Become part of our ICT community and learn programming, technology, and innovation.</p>
+      <button class="start-btn" onclick="showInstructions()">Start Joining</button>
+    </div>
+  </section>
 
-<p>Become part of our ICT community and learn programming, technology, and innovation.</p>
+  <!-- INSTRUCTIONS -->
+  <section class="instructions" id="instructions">
+    <div class="container">
+      <h2>How to Join the Club</h2>
 
-<button class="start-btn" onclick="showInstructions()">Start Joining</button>
+      <div class="steps">
+        <div class="step">
+          <h3>1. Follow a Committee Member</h3>
+          <p>Follow one of our committee members below so they can verify you and guide you into the club.</p>
+        </div>
+        <div class="step">
+          <h3>2. Send a Message</h3>
+          <p>Send them a message saying:</p>
+          <p><b>Hello! I would like to join the CODE 4 IMPACT ICT Club.</b></p>
+        </div>
+        <div class="step">
+          <h3>3. Receive the Club Link</h3>
+          <p>The committee member will send you the official club group link so you can join the community.</p>
+        </div>
+      </div>
 
-</div>
+      <!-- COMMITTEE MEMBERS -->
+      <h2 style="margin-bottom:2rem;">Committee Members</h2>
 
-</section>
+      <div class="committee">
+        <div class="member">
+          <img src="images/president.jpg" alt="Rahim">
+          <h4>MD. Monjur Morshed Ratin</h4>
+          <p>President</p>
+          <a class="follow-btn" href="https://facebook.com/" target="_blank">Follow</a>
+        </div>
+        <div class="member">
+          <img src="images/member2.jpg" alt="Tanvir">
+          <h4>srijon</h4>
+          <p>Vice President</p>
+          <a class="follow-btn" href="https://facebook.com/" target="_blank">Follow</a>
+        </div>
+        <div class="member">
+          <img src="images/member3.jpg" alt="Nabil">
+          <h4>mahib</h4>
+          <p>Workshop Coordinator</p>
+          <a class="follow-btn" href="https://facebook.com/" target="_blank">Follow</a>
+        </div>
+      </div>
 
+      <div class="message">
+        <p>Can't reach a committee member?</p>
+        <a href="https://m.me/yourusername" target="_blank">Message Website Creator</a>
+      </div>
+    </div>
+  </section>
 
-<!-- INSTRUCTIONS -->
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
 
-<section class="instructions" id="instructions">
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
 
-<div class="container">
-
-<h2>How to Join the Club</h2>
-
-
-<div class="steps">
-
-<div class="step">
-<h3>1. Follow a Committee Member</h3>
-<p>Follow one of our committee members below so they can verify you and guide you into the club.</p>
-</div>
-
-<div class="step">
-<h3>2. Send a Message</h3>
-<p>Send them a message saying:</p>
-<p><b>Hello! I would like to join the CODE 4 IMPACT ICT Club.</b></p>
-</div>
-
-<div class="step">
-<h3>3. Receive the Club Link</h3>
-<p>The committee member will send you the official club group link so you can join the community.</p>
-</div>
-
-</div>
-
-
-<!-- COMMITTEE MEMBERS -->
-
-<h2 style="margin-bottom:20px;">Committee Members</h2>
-
-<div class="committee">
-
-<div class="member">
-<img src="member1.jpg">
-<h4>Rahim</h4>
-<p>President</p>
-<a class="follow-btn" href="https://facebook.com/" target="_blank">Follow</a>
-</div>
-
-<div class="member">
-<img src="member2.jpg">
-<h4>Tanvir</h4>
-<p>Vice President</p>
-<a class="follow-btn" href="https://facebook.com/" target="_blank">Follow</a>
-</div>
-
-<div class="member">
-<img src="member3.jpg">
-<h4>Nabil</h4>
-<p>Workshop Coordinator</p>
-<a class="follow-btn" href="https://facebook.com/" target="_blank">Follow</a>
-</div>
-
-</div>
-
-
-<div class="message">
-
-<p style="margin-bottom:20px;">Can't reach a committee member?</p>
-
-<a href="https://m.me/yourusername" target="_blank">
-Message Website Creator
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<footer>
-
-<p>CODE 4 IMPACT ICT Club</p>
-<p>Website created by YOU</p>
-
-</footer>
-
-
-<script>
-
-function showInstructions(){
-
-document.getElementById("instructions").style.display="block";
-
-window.scrollTo({
-top:document.getElementById("instructions").offsetTop,
-behavior:"smooth"
-});
-
-}
-
-</script>
-
-
-
+    function showInstructions() {
+      document.getElementById("instructions").style.display = "block";
+      window.scrollTo({
+        top: document.getElementById("instructions").offsetTop,
+        behavior: "smooth"
+      });
+    }
+  </script>
 </body>
 </html>
